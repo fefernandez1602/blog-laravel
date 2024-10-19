@@ -1,22 +1,17 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PostController;
 
-Route::get('/', function () {
-    return "Bienvenido a la pagina principal";
-});
+//Ruta asignada a un controlador
+Route::get('/', HomeController::class);
 
-Route::get('/posts', function () {
-    return "Aqui se mostaran todos los posts";
-});
+Route::get('/posts', [PostController::class, "index"]);
 
-Route::get('/posts/create', function () { //Enrutado de contenido variable
-    return "Aqui se mostara un formulario para crear un post";
-});
+Route::get('/posts/create', [PostController::class, "create"]);
 
-Route::get('/posts/{post}', function ($post) { //Enrutado de contenido variable
-    return "Aqui se mostara el post {$post}";
-});
+Route::get('/posts/{post}', [PostController::class, "show"]); //Enrutado variable
 
 #Route::get('/posts/{post}/{category}', function ($post,$category = null) { //Enrutado de contenido variable
     
