@@ -30,10 +30,10 @@ Route::get('prueba', function(){
 
     //Buscar un post por id
 
-    $post = Post::find(4);
+    /* $post = Post::find(4);
 
     return $post;
-
+ */
     
     //Buscar post por title y actualizar registro
 
@@ -74,6 +74,13 @@ Route::get('prueba', function(){
     $posts->delete();
 
     return "Se elimino correctamente!!"; */
+
+    //Casting
+
+    $post = Post::find(1);
+
+    dd($post->is_active);
+
 });
 
 #Route::get('/posts/{post}/{category}', function ($post,$category = null) { //Enrutado de contenido variable

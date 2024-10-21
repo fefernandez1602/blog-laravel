@@ -9,6 +9,13 @@ class Post extends Model
 {
     protected $table = 'posts'; //Si no se define la tabla, tomara el nombre de la clase en minuscula y plural como el nombre de la tabla
 
+    protected function casts(): array{ //Transforma tanto al recuperar como al insertar
+        return [
+            'published_at' => 'datetime',
+            'is_active' => 'boolean', 
+        ];
+    }
+
     protected function title(): Attribute{ // que cada vez que intentemos ingresar un registro, el atributo title pasara a minuscula
         return Attribute::make(
             set: function($value){ //Mutador
