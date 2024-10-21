@@ -12,13 +12,13 @@
         
         <h1 class="py-2">Bienvenido a la pagina principal</h1>
         
-        <x-alert type="danger" class="mb-4">
+        <x-alert2 type="warning" class="mb-4">
             <x-slot name="title">
                 Alerta!
             </x-slot>
 
             Contenido de la alerta {{-- Se le asigna el contenido a mostar a la variable / lo que se muestra en la alerta de la pagina --}}
-        </x-alert>
+        </x-alert2>
 
         <p>hola mundo</p>
 
