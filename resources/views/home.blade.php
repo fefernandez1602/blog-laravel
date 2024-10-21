@@ -1,17 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laravel 11</title>
+@extends('layouts.app')
 
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body>
+@section('title', 'Inicio')
+
+@push('css')
+    <style>
+        body{
+            background-color: aquamarine
+        }
+    </style>
+@endpush
+
+@section('content')
     <div class="max-w-4xl mx-auto px-4">
-        
+
         <h1 class="py-2">Bienvenido a la pagina principal</h1>
-        
+
         <x-alert2 type="warning" class="mb-4">
             <x-slot name="title">
                 Alerta!
@@ -23,5 +26,4 @@
         <p>hola mundo</p>
 
     </div>
-</body>
-</html>
+@endsection
