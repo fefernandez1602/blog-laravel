@@ -8,7 +8,7 @@
 </head>
 <body>
 
-    <a href="/posts">Volver a Posts</a>
+    <a href="{{route('posts.index')}}">Volver a Posts</a>
 
     <h1>Titulo: {{ $post->title }}</h1>
     <p>
@@ -19,12 +19,12 @@
         {{ $post->content }}
     </p>
 
-    <a href="/posts/{{$post->id}}/edit">Editar post</a>
+    <a href="{{route('posts.edit', $post)}}">Editar post</a>
 
     <br>
     <br>
 
-    <form action="/posts/{{$post->id}}" method="POST">
+    <form action="{{route('posts.delete', $post)}}" method="POST">
          
         @csrf
 
