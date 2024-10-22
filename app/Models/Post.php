@@ -4,9 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Post extends Model
 {
+    use HasFactory;
+
     protected $table = 'posts'; //Si no se define la tabla, tomara el nombre de la clase en minuscula y plural como el nombre de la tabla
 
     protected function casts(): array{ //Transforma tanto al recuperar como al insertar
