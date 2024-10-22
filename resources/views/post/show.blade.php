@@ -7,6 +7,32 @@
     <title>Laravel 11 | Show</title>
 </head>
 <body>
-    <h1>Aqui se mostara el post {{ $post }}</h1>
+
+    <a href="/posts">Volver a Posts</a>
+
+    <h1>Titulo: {{ $post->title }}</h1>
+    <p>
+        <b>Categoria:</b> {{ $post->categoria }}
+    </p>
+
+    <p>
+        {{ $post->content }}
+    </p>
+
+    <a href="/posts/{{$post->id}}/edit">Editar post</a>
+
+    <br>
+    <br>
+
+    <form action="/posts/{{$post->id}}" method="POST">
+         
+        @csrf
+
+        @method('DELETE')
+
+        <button type="submit">
+            Eliminar Post
+        </button>
+    </form>
 </body>
 </html>

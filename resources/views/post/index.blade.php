@@ -1,23 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Laravel 11 | Post</title>
+<x-app-layout>
 
-    <script src="https://cdn.tailwindcss.com"></script>
+    <h1>Aqui se mostraran todos los posts</h1>
 
-</head>
-<body>
-    <header>
+    <a href="/posts/create">
+        Nuevo Post
+    </a>
 
-    </header>
+    <ul>
+        @foreach ($posts as $post)
+            <li>
+                <a href="/posts/{{$post->id}}">
+                    {{ $post->title }}
+                </a>
+            </li>
+        @endforeach
+    </ul>
 
-    <h1>Aqui se mostaran todos los posts</h1>
-
-    <footer>
-        
-    </footer>
-</body>
-</html>
+</x-app-layout>
