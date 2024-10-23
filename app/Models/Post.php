@@ -10,6 +10,17 @@ class Post extends Model
 {
     use HasFactory;
 
+    /* protected $fillable = [ //columnas las cuales si se permite insertar/modificar con asignacion masiva
+        'title',
+        'slug',
+        'categoria',
+        'content',
+    ]; */
+
+    protected $guarded =[ //columnas las cuales NO se pueden insertar/modificar, con esto logro que al momento de hacer alguna de las 2 tareas mencionadas, ignore lo ingresado en la especificadas
+        'is_active',
+    ];
+
     protected $table = 'posts'; //Si no se define la tabla, tomara el nombre de la clase en minuscula y plural como el nombre de la tabla
 
     protected function casts(): array{ //Transforma tanto al recuperar como al insertar
