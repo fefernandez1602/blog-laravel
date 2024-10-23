@@ -29,4 +29,9 @@ class Post extends Model
             }
         );
     }
+
+    public function getRouteKeyName() //Funcion que sirve para indicar que dato utilice para buscar (como el ID, por ejemplo)
+    {
+        return 'slug';
+    }
 }
