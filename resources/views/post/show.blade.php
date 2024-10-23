@@ -24,7 +24,7 @@
     <br>
     <br>
 
-    <form action="{{route('posts.delete', $post)}}" method="POST">
+    <form action="{{route('posts.destroy', $post)}}" method="POST">
          
         @csrf
 
