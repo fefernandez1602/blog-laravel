@@ -29,7 +29,7 @@ class StorePostRequest extends FormRequest
         ];
     }
 
-    public function messages()
+    /* public function messages()
     {
         return [
             'title.required' => 'The :attribute field is required. (edited)',
@@ -37,12 +37,12 @@ class StorePostRequest extends FormRequest
             'categoria.required' => 'The categoria field is required. (edited)',
             'content.required' => 'The content field is required. (edited)',
         ];
-    }
+    } */
 
-    public function attributes()
+    /* public function attributes()
     {
         return[
             'title'=> 'name'
         ];
-    }
+    } */
 }
