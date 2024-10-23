@@ -26,6 +26,13 @@ class PostController extends Controller
 
         $post->save(); */
 
+        $request->validate([
+            'title' => ['required','min:5','max:80'],
+            'slug' => 'required|unique:posts',
+            'categoria' => 'required',
+            'content' => 'required',
+        ]);
+
         Post::create($request->all());
 
         return redirect()->route('posts.index');
@@ -52,6 +59,13 @@ class PostController extends Controller
         $post->content = $request->content;
 
         $post->save(); */
+
+        $request->validate([
+            'title' => ['required','min:5','max:80'],
+            'slug' => "required|unique:posts,slug,{$post->id}",
+            'categoria' => 'required',
+            'content' => 'required',
+        ]);
 
         $post->update($request->all());
 
