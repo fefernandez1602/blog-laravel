@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
+use App\Models\Comment;
 use App\Models\Phone;
 use App\Models\Post;
 use App\Models\User;
@@ -115,9 +116,27 @@ Route::get('prueba2',function(){
             ->with('phone')
             ->first(); */
 
-    $phone = Phone::find(1);
+    /* $phone = Phone::find(1);
 
-    return $phone->user;
+    return $phone->user; */
+
+   /* Comment::create([
+        'content' => 'Comentario 2',
+        'post_id' => 100
+   ]); */
+
+   /* $comment = Comment::find(1);
+
+   return $comment->post; */
+
+    $post = Post::find(100);
+
+    $post->comments()->create([
+        'content' => 'Un comentario de prueba'
+    ]);
+
+    return 'Comentario creado!';
+
 });
 
 #Route::get('/posts/{post}/{category}', function ($post,$category = null) { //Enrutado de contenido variable
