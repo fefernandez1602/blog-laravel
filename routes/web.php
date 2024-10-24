@@ -3,7 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
+use App\Models\Phone;
 use App\Models\Post;
+use App\Models\User;
 
 //Ruta asignada a un controlador
 /* Route::get('/', HomeController::class);
@@ -94,6 +96,28 @@ return "Se elimino correctamente!!"; */
     $post = Post::find(1);
 
     dd($post->is_active);
+});
+
+Route::get('prueba2',function(){
+
+    /* User::create([
+        'name' => 'Marcelo Contreras',
+        'email' => 'marcelo@gmail.com',
+        'password' => bcrypt('12345'),
+    ]); */
+
+    /* Phone::create([
+        'number' => '987654321',
+        'user_id' => 12,
+    ]); */
+
+    /* $user = User::where('id', 12)
+            ->with('phone')
+            ->first(); */
+
+    $phone = Phone::find(1);
+
+    return $phone->user;
 });
 
 #Route::get('/posts/{post}/{category}', function ($post,$category = null) { //Enrutado de contenido variable
